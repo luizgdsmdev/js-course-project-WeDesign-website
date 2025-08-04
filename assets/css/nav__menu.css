@@ -1,7 +1,7 @@
 .nav__menu-top{
     width: 100%;
     height: fit-content;
-    background-color: rgba(42, 45, 56, 1);
+    background-color: rgba(0, 0, 0, 1);
     position: fixed;
     transition: background-color 1s ease-in-out;
 }
@@ -65,7 +65,7 @@
     transition: width 0.3s ease-in-out;
     left: 0;
     bottom: 0;
-    background-color: #e0604c;
+    background-color: #bc6658;
     z-index: -1;
 }
 

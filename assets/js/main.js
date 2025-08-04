@@ -4,7 +4,7 @@
 let nav__menuTop = document.getElementById("nav__menu-top");
 window.addEventListener("scroll", () => {
     console.log(this.scrollY);
-    this.scrollY > 40 ? nav__menuTop.style.backgroundColor = "rgba(42, 45, 56, 0.5)" : nav__menuTop.style.backgroundColor = "rgba(42, 45, 56, 1)";
+    this.scrollY > 40 ? nav__menuTop.style.backgroundColor = "rgba(0, 0, 0, 0.5)" : nav__menuTop.style.backgroundColor = "rgba(0, 0, 0, 1)";
 });
 
 //Mobile menu handler
