@@ -1,4 +1,4 @@
-# js-course-project-WeDesign-website
+# Javascript course: project WeDesign website
 
 Replicating a fictional design website, built with HTML, CSS, and JavaScript. This project focuses on creating a professional and responsive interface, featuring interactive elements and a clean design.
 

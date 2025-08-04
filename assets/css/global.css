@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: Ggsans, sans-serif;
+    animation: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    height: 3000px;
+}
