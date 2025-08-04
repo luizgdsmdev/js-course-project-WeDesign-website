@@ -89,7 +89,6 @@ main{
     filter: blur(15px);
     z-index: -1; 
     border-radius: 1rem;
-    animation: spin 5s ease-in-out infinite;
     background-size: 200% 100%;
 }
 

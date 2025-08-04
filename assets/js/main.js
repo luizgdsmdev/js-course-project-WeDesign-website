@@ -3,7 +3,6 @@
 //Deal with menu animation
 let nav__menuTop = document.getElementById("nav__menu-top");
 window.addEventListener("scroll", () => {
-    console.log(this.scrollY);
     this.scrollY > 40 ? nav__menuTop.style.backgroundColor = "rgba(0, 0, 0, 0.8)" : nav__menuTop.style.backgroundColor = "rgba(0, 0, 0, 1)";
 });
 
@@ -41,9 +40,53 @@ iconMenuHamburguer.onclick = () =>{
 document.getElementById("main__content-button").onclick = () =>{
     scrollSmoothly(document.getElementById("main__content-about"), 2500);
     setTimeout(() => {
-        document.getElementById("main__content-about").classList.toggle("transition-block");
+        document.getElementById("main__content-about").classList.add("transition-block");
     }, 10);
+    setTimeout(() => {
+        document.getElementById("main__content-about").classList.remove("transition-block");
+    }, 2500);
+    
 };
+
+document.getElementById("nav__menu-item-about").onclick = () =>{
+    scrollSmoothly(document.getElementById("main__content-about"), 2500);
+    setTimeout(() => {
+        document.getElementById("main__content-about").classList.add("transition-block");
+    }, 10);
+    setTimeout(() => {
+        document.getElementById("main__content-about").classList.remove("transition-block");
+    }, 2500);
+    
+};
+
+document.getElementById("main__content-Keep").onclick = () =>{
+    scrollSmoothly(document.getElementById("main__content-services"), 2500);
+    setTimeout(() => {
+        document.getElementById("main__content-services").classList.add("transition-block");
+        document.getElementById("main__content-services").classList.add("stay-black");
+    }, 10);
+    setTimeout(() => {
+        document.getElementById("main__content-services").classList.remove("transition-block");
+        document.getElementById("main__content-services").classList.remove("stay-black");
+    }, 2500);
+};
+
+document.getElementById("nav__menu-item-services").onclick = () =>{
+    scrollSmoothly(document.getElementById("main__content-services"), 2500);
+    setTimeout(() => {
+        document.getElementById("main__content-services").classList.add("transition-block");
+        document.getElementById("main__content-services").classList.add("stay-black");
+    }, 10);
+    setTimeout(() => {
+        document.getElementById("main__content-services").classList.remove("transition-block");
+        document.getElementById("main__content-services").classList.remove("stay-black");
+    }, 2500);
+};
+
+
+
+
+
 
 function scrollSmoothly(targetElement, duration) {
   const startPosition = window.pageYOffset;
