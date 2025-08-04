@@ -38,7 +38,7 @@ main{
     width: 100%;
     text-align: -webkit-center;
     text-align: center;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
 }
 
 .main__content-text{
@@ -50,6 +50,73 @@ main{
     text-align: center;
     line-height: 1.9rem;
 }
+
+.main__content-button-wrapper{
+    position: relative;
+    z-index: 1;
+}
+
+.main__content-button{
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    padding: 1rem 1.5rem;
+    background-color: #e0604c;
+    border-radius: 1.5rem;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.main__content-button-wrapper::after{
+    content: "";
+    width: 100%;
+    height: 4rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 1.5rem;
+    background: linear-gradient(to right, #c23636, #bd4205);
+    filter: blur(15px);
+    z-index: -1; 
+    border-radius: 1rem;
+    animation: spin 5s ease-in-out infinite;
+    background-size: 200% 100%;
+}
+
+.main__content-button-wrapper:hover::after{
+    background: linear-gradient(to right, #c2b2b2, #ff0303);
+    animation: spinFast 2.3s ease-in-out infinite;
+    background-size: 200% 100%;
+}
+
+@keyframes spin {
+  0%{
+    background-position: 50% 50% ; /* Start position */
+  }
+  30%{
+    background-position: 100% 100%; /* Start position */
+  }
+  60%{
+    background-position: 50% 50% ; /* Start position */
+  }
+  70%{
+    background-position: 100% 100%; /* Start position */
+  }
+  100% {
+    background-position: 50% 50%; /* End position */
+  }
+}
+
+@keyframes spinFast {
+  0%{
+    background-position: 200% 100% ; /* Start position */
+  }
+  100% {
+    background-position: 500% 100%; /* End position */
+  }
+}
+
+
 
 
 
