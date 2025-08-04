@@ -39,6 +39,9 @@ main{
     text-align: -webkit-center;
     text-align: center;
     padding-bottom: 2rem;
+    opacity: 0;
+    animation: makeElementApperFromBottom 1s ease-in-out forwards;
+    
 }
 
 .main__content-text{
@@ -50,6 +53,8 @@ main{
     text-align: center; 
     line-height: 1.9rem;
     text-overflow: ellipsis; /* Adds ellipsis to truncated text */
+    animation: makeElementApperFromBottom 1s 1s ease-in-out forwards;
+    opacity: 0;
 }
 
 .main__content-button-wrapper{
@@ -65,6 +70,8 @@ main{
     border-radius: 1.5rem;
     font-weight: 300;
     cursor: pointer;
+    animation: makeElementApperFromBottom 1s 2s ease-in-out forwards;
+    opacity: 0;
 }
 
 .main__content-button-wrapper::after{
@@ -82,12 +89,15 @@ main{
     border-radius: 1rem;
     animation: spin 5s ease-in-out infinite;
     background-size: 200% 100%;
+    animation: makeElementApperFromBottom 1s 2s ease-in-out forwards;
+    opacity: 0;
 }
 
 .main__content-button-wrapper:hover::after{
     background: linear-gradient(to right, #c2b2b2, #ff0303);
     animation: spinFast 2.3s ease-in-out infinite;
     background-size: 200% 100%;
+    border-radius: 1rem;
 }
  
 @keyframes spin {
@@ -117,10 +127,21 @@ main{
   }
 }
 
+@keyframes makeElementApper {
+    100%{
+        opacity: 1;
+    }
+}
 
-
-
-
+@keyframes makeElementApperFromBottom {
+    0%{
+        transform: translateY(80px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 @media screen and (max-width: 620px) {
     .main__content-text-control{
