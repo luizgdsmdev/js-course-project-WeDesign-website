@@ -38,28 +38,37 @@ iconMenuHamburguer.onclick = () =>{
 
 //Action for start tour
 document.getElementById("main__content-button").onclick = () =>{
+    document.body.style.overflow = "auto";
     scrollSmoothly(document.getElementById("main__content-about"), 2500);
     setTimeout(() => {
         document.getElementById("main__content-about").classList.add("transition-block");
+        
     }, 10);
     setTimeout(() => {
+        document.getElementById("content__about-mission").classList.add("showNow");
+        document.getElementById("content__about-vission").classList.add("showDeley");
         document.getElementById("main__content-about").classList.remove("transition-block");
     }, 2500);
-    
+    document.body.style.overflow = "hidden";
 };
 
 document.getElementById("nav__menu-item-about").onclick = () =>{
+    document.body.style.overflow = "auto";
     scrollSmoothly(document.getElementById("main__content-about"), 2500);
     setTimeout(() => {
         document.getElementById("main__content-about").classList.add("transition-block");
     }, 10);
     setTimeout(() => {
+        document.getElementById("content__about-mission").classList.add("showNow");
+        document.getElementById("content__about-vission").classList.add("showDeley");
         document.getElementById("main__content-about").classList.remove("transition-block");
     }, 2500);
-    
+    document.body.style.overflow = "hidden";
 };
 
+
 document.getElementById("main__content-Keep").onclick = () =>{
+    document.body.style.overflow = "auto";
     scrollSmoothly(document.getElementById("main__content-services"), 2500);
     setTimeout(() => {
         document.getElementById("main__content-services").classList.add("transition-block");
@@ -69,9 +78,11 @@ document.getElementById("main__content-Keep").onclick = () =>{
         document.getElementById("main__content-services").classList.remove("transition-block");
         document.getElementById("main__content-services").classList.remove("stay-black");
     }, 2500);
+    document.body.style.overflow = "hidden";
 };
 
 document.getElementById("nav__menu-item-services").onclick = () =>{
+    document.body.style.overflow = "auto";
     scrollSmoothly(document.getElementById("main__content-services"), 2500);
     setTimeout(() => {
         document.getElementById("main__content-services").classList.add("transition-block");
@@ -81,6 +92,7 @@ document.getElementById("nav__menu-item-services").onclick = () =>{
         document.getElementById("main__content-services").classList.remove("transition-block");
         document.getElementById("main__content-services").classList.remove("stay-black");
     }, 2500);
+    document.body.style.overflow = "hidden";
 };
 
 

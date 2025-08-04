@@ -16,6 +16,7 @@ body{
     justify-content: flex-start;
     align-items: center;
     height: 3000px;
+    overflow-y: hidden;
 }
 
 body::-webkit-scrollbar {
