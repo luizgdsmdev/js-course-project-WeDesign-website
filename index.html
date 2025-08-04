@@ -13,6 +13,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <title>Wedesign</title>
+
+    <style>
+    /* Define o path do movimento da linha */
+    @keyframes moveAndCurve {
+      0% {
+        stroke-dashoffset: 0;
+        transform: rotate(0deg);
+      }
+      50% {
+        stroke-dashoffset: 80;
+        transform: rotate(0deg);
+      }
+      100% {
+        stroke-dashoffset: 160;
+        transform: rotate(90deg);
+      }
+    }
+
+    /* Estilo para a linha */
+    #animated-line {
+      fill: none;
+      stroke: white;
+      stroke-width: 3px;
+      stroke-linecap: round;
+      stroke-dasharray: 80 80; /* A linha tem 80px de comprimento, o que permite o efeito de 'desenhar' */
+      stroke-dashoffset: 160; /* Começa com a linha totalmente escondida */
+      animation: moveAndCurve 3s ease-in-out forwards; /* Aplica a animação */
+    }
+  </style>
 </head>
 <body>
 
@@ -62,7 +91,22 @@
         </div>
 
         <div id="main__content-about" class="main__content-about">
+            <div id="content__about-mission" class="content__about-mission">
+                <img src="./assets/images/mission.jpg" alt="mission">
+                <div id="content__about-text-wrapper" class="content__about-text-wrapper">
+                    <h4>mission</h4>
+                    <p>Our mission is to empower businesses by transforming their ideas into exceptional digital experiences. We combine strategic design with cutting-edge technology to build products and platforms that are not only visually stunning, but also intuitive, effective, and deeply connected to their users. We strive to be the driving force behind our clients' digital success.</p>
+                </div>
+            </div>
 
+            <div id="content__about-mission" class="content__about-mission">
+                <div id="content__about-text-wrapper" class="content__about-text-wrapper">
+                    <h4>Vision</h4>
+                    <p>To be the leading global design and technology partner, recognized for our creative excellence, innovative solutions, and our unwavering commitment to our clients' growth. We envision a world where every digital interaction is seamless, beautiful, and purposeful.</p>
+                </div>
+                <img src="./assets/images/design.avif" alt="mission">
+                
+            </div>
         </div>
     </main>
 

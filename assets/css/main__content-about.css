@@ -1,17 +1,50 @@
+.main__content-about {
+  --sb-track-color: #232E33;
+  --sb-thumb-color: #e0604c;
+  --sb-size: 6px;
+}
+
+.main__content-about::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+.main__content-about::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 36px;
+}
+
+.main__content-about::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 36px;
+  border: 1px solid #ffffff;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .main__content-about {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
+}
+
 .main__content-about{
     background-color: #000000;
     width: 100%;
-    height: 100vh; 
-    box-shadow: 0px -5rem 4rem 2rem rgba(0,0,0,0.97);
-    -webkit-box-shadow: 0px -5rem 4rem 2rem rgba(0,0,0,0.97);
+    height: 100vh;
+    box-shadow: 0px -5rem 4rem 2rem rgba(0, 0, 0, 0.97);
+    -webkit-box-shadow: 0px -5rem 4rem 2rem rgba(0, 0, 0, 0.97);
     -moz-box-shadow: 0px -5rem 4rem 2rem rgba(0,0,0,0.97);
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
-    scroll-snap-align: start; 
+    scroll-snap-align: start;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    color: white;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    padding-top: calc(100vh - 93vh);
 } 
-
-
 
 .main__content-about.transition-block{
     box-shadow: 0px -45rem 14rem 12rem rgba(0,0,0,0.97);
@@ -19,3 +52,46 @@
     -moz-box-shadow: 0px -45rem 14rem 12rem rgba(0,0,0,0.97);
     transition: box-shadow 0.9s ease-in;
 }
+
+.content__about-mission{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 1280px;
+    margin: 1.5rem 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.content__about-text-wrapper{
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: space-around;
+    height: -webkit-fill-available;
+    padding: 1.5rem;
+}
+
+.content__about-text-wrapper h4{
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+ 
+.content__about-text-wrapper p{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.content__about-mission img{
+    width: 29rem;
+    border-radius: 1rem 1rem 1rem 1rem;
+}
+
