@@ -3,7 +3,7 @@ main{
     height: 100%;
 }
 
-.main__content{
+.main__content-banner{
     background-image: url("../images/webdesign1.jpg");
     width: 100%;
     height: 100vh;

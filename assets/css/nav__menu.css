@@ -96,11 +96,11 @@
         opacity: 1;
     }
     90%{
-        transform: rotate(-520deg);
+        transform: rotate(539deg);
         opacity: 0;
     }
     100%{
-        transform: rotate(0deg);
+        transform: rotate(539deg);
         opacity: 1;
     }
 }

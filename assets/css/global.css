@@ -17,3 +17,5 @@ body{
     align-items: center;
     height: 3000px;
 }
+
+html, body{overflow: hidden;}

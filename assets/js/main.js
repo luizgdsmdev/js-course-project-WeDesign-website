@@ -10,13 +10,19 @@ window.addEventListener("scroll", () => {
 //Mobile menu handler
 let iconMenuHamburguer = document.getElementById("menu__logo-hamburguer");
 let clickCtr = 0;
+let classCtr = false;
 iconMenuHamburguer.onclick = () =>{
     //Menu list wrapper
     document.getElementById("nav__itens-wrapper").classList.toggle("showMobilemenu");
 
-    iconMenuHamburguer.classList.toggle("changeIcon");
-    iconMenuHamburguer.classList.toggle("changeIconOut");
-    console.log(iconMenuHamburguer.src.includes("hamburguer.svg"))
+    if(classCtr){
+        iconMenuHamburguer.classList.toggle("changeIcon");
+        iconMenuHamburguer.classList.toggle("changeIconOut");
+        console.log(iconMenuHamburguer.src.includes("hamburguer.svg"));
+    }else{
+        classCtr = true;
+        iconMenuHamburguer.classList.add("changeIconOut");
+    }
 
     if(iconMenuHamburguer.src.includes("hamburguer.svg") && clickCtr === 0 ){
         iconMenuHamburguer.src = "./assets/images/menu/svgexport-71.svg";
@@ -29,3 +35,37 @@ iconMenuHamburguer.onclick = () =>{
         clickCtr = 0;
     }
 };
+
+
+//Action for start tour
+document.getElementById("main__content-button").onclick = () =>{
+    scrollSmoothly(document.getElementById("main__content-about"), 2500);
+    setTimeout(() => {
+        document.getElementById("main__content-about").classList.toggle("transition-block");
+    }, 10);
+};
+
+function scrollSmoothly(targetElement, duration) {
+  const startPosition = window.pageYOffset;
+  const targetPosition = targetElement.getBoundingClientRect().top + startPosition;
+  const distance = targetPosition - startPosition;
+  const startTime = performance.now();
+
+  function animateScroll(currentTime) {
+    const elapsedTime = currentTime - startTime;
+    const progress = Math.min(elapsedTime / duration, 1);
+    const easeProgress = easeInOutQuad(progress);
+
+    window.scrollTo(0, startPosition + distance * easeProgress);
+
+    if (elapsedTime < duration) {
+      requestAnimationFrame(animateScroll);
+    }
+  }
+
+  function easeInOutQuad(t) {
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+  }
+
+  requestAnimationFrame(animateScroll);
+}
