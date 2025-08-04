@@ -9,6 +9,7 @@ window.addEventListener("scroll", () => {
 
 //Mobile menu handler
 let iconMenuHamburguer = document.getElementById("menu__logo-hamburguer");
+let clickCtr = 0;
 iconMenuHamburguer.onclick = () =>{
     //Menu list wrapper
     document.getElementById("nav__itens-wrapper").classList.toggle("showMobilemenu");
@@ -16,7 +17,15 @@ iconMenuHamburguer.onclick = () =>{
     iconMenuHamburguer.classList.toggle("changeIcon");
     iconMenuHamburguer.classList.toggle("changeIconOut");
     console.log(iconMenuHamburguer.src.includes("hamburguer.svg"))
-    setTimeout(() => {
-        iconMenuHamburguer.src.includes("hamburguer.svg") ? iconMenuHamburguer.src = "./assets/images/menu/svgexport-71.svg" : iconMenuHamburguer.src = "./assets/images/menu/hamburguer.svg"
-    }, 1600);
+
+    if(iconMenuHamburguer.src.includes("hamburguer.svg") && clickCtr === 0 ){
+        iconMenuHamburguer.src = "./assets/images/menu/svgexport-71.svg";
+        clickCtr++;
+    }else if(clickCtr === 1){
+        iconMenuHamburguer.src = "./assets/images/menu/svgexport-71.svg";
+        setTimeout(() => {
+            iconMenuHamburguer.src = "./assets/images/menu/hamburguer.svg";
+        }, 1600);
+        clickCtr = 0;
+    }
 };

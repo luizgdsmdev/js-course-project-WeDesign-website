@@ -60,6 +60,8 @@ main{
 .main__content-button-wrapper{
     position: relative;
     z-index: 1;
+    animation: makeElementApperFromBottom 1s 2s ease-in-out forwards;
+    opacity: 0;
 }
 
 .main__content-button{
@@ -89,8 +91,6 @@ main{
     border-radius: 1rem;
     animation: spin 5s ease-in-out infinite;
     background-size: 200% 100%;
-    animation: makeElementApperFromBottom 1s 2s ease-in-out forwards;
-    opacity: 0;
 }
 
 .main__content-button-wrapper:hover::after{
