@@ -19,16 +19,16 @@
     max-width: calc(100vw - 3rem);
     padding: 0 1.5rem;
     padding-top: calc(100vh - 97vh);
-    transition: background-position 2s ease-in-out;
+    transition: background-position 0.5s ease-in-out;
 }
 
 .main__content-services.stay-black {
     background-position: top;
-    transition: background-position 2s ease-in-out;
+    transition: background-position 0.5s ease-in-out;
 }
 
 .main__content-services.transition-block {
-    transition: box-shadow 0.9s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;
     animation: boxShadowAnimation 2.5s ease-in-out forwards;
 }
 
@@ -68,7 +68,45 @@
 
 }
 
+.content__about-navigation{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    display: none;
+    opacity: 0;
+}
+
+.content__about-navigation p{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.8rem;
+    color: #000000;
+    background-color: #e0604c;
+    border-radius: 50%;
+    max-width: fit-content;
+    display: none;
+}
+
+#main__content-about-mobile-wrapper{
+    display: none;
+}
+
 @media screen and (max-width: 920px) {
+    .content__about-text-wrapper{
+        padding: 0;
+    }
+    #main__content-about-mobile-wrapper{
+        display: block;
+        margin-bottom: 4rem;
+    }
+
+    .hide_mobile{
+        display: none;
+    }
     .content__about-mission, .content__about-vission {
         flex-direction: column;
     }
@@ -76,4 +114,13 @@
     .main__content-services {
         padding-top: calc(100vh - 96vh);
     }
+
+    .content__about-navigation{
+        display: flex;
+    }
+
+    .content__about-navigation p{
+        display: block;
+    }
 }
+

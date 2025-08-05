@@ -36,37 +36,7 @@ iconMenuHamburguer.onclick = () =>{
 };
 
 
-//Action for start tour
-document.getElementById("main__content-button").onclick = () =>{
-    document.body.style.overflow = "auto";
-    scrollSmoothly(document.getElementById("main__content-about"), 2500);
-    setTimeout(() => {
-        document.getElementById("main__content-about").classList.add("transition-block");
-        
-    }, 10);
-    setTimeout(() => {
-        document.getElementById("content__about-mission").classList.add("showNow");
-        document.getElementById("content__about-vission").classList.add("showDeley");
-        document.getElementById("main__content-about").classList.remove("transition-block");
-    }, 2500);
-    document.body.style.overflow = "hidden";
-};
-
-document.getElementById("nav__menu-item-about").onclick = () =>{
-    document.body.style.overflow = "auto";
-    scrollSmoothly(document.getElementById("main__content-about"), 2500);
-    setTimeout(() => {
-        document.getElementById("main__content-about").classList.add("transition-block");
-    }, 10);
-    setTimeout(() => {
-        document.getElementById("content__about-mission").classList.add("showNow");
-        document.getElementById("content__about-vission").classList.add("showDeley");
-        document.getElementById("main__content-about").classList.remove("transition-block");
-    }, 2500);
-    document.body.style.overflow = "hidden";
-};
-
-
+//Nav to top page
 document.getElementById("main__content-Keep").onclick = () =>{
     document.body.style.overflow = "auto";
     scrollSmoothly(document.getElementById("main__content-services"), 2500);
@@ -77,7 +47,7 @@ document.getElementById("main__content-Keep").onclick = () =>{
     setTimeout(() => {
         document.getElementById("main__content-services").classList.remove("transition-block");
         document.getElementById("main__content-services").classList.remove("stay-black");
-    }, 2500);
+    }, 3500);
     document.body.style.overflow = "hidden";
 };
 
@@ -95,6 +65,88 @@ document.getElementById("nav__menu-item-services").onclick = () =>{
     document.body.style.overflow = "hidden";
 };
 
+//Action for start tour
+document.getElementById("main__content-button").onclick = () =>{
+    document.body.style.overflow = "auto";
+    scrollSmoothly(document.getElementById("main__content-about"), 2500);
+    setTimeout(() => {
+        document.getElementById("main__content-about").classList.add("transition-block");
+        
+    }, 10);
+    setTimeout(() => {
+        document.getElementById("content__about-mission").classList.add("showNow");
+        document.getElementById("content__about-vission").classList.add("showDeley");
+        document.getElementById("content__about-navigation").classList.add("showDeley");
+        document.getElementById("main__content-about").classList.remove("transition-block");
+    }, 2500);
+    document.body.style.overflow = "hidden";
+};
+
+document.getElementById("nav__menu-item-about").onclick = () =>{
+    document.body.style.overflow = "auto";
+    scrollSmoothly(document.getElementById("main__content-about"), 2500);
+    setTimeout(() => {
+        document.getElementById("main__content-about").classList.add("transition-block");
+    }, 10);
+    setTimeout(() => {
+        document.getElementById("content__about-mission").classList.add("showNow");
+        document.getElementById("content__about-vission").classList.add("showDeley");
+        document.getElementById("content__about-navigation").classList.add("showDeley");
+        document.getElementById("main__content-about").classList.remove("transition-block");
+    }, 2500);
+    document.body.style.overflow = "hidden";
+};
+
+
+//Nav to third section
+document.getElementById("main__content-Keep").onclick = () =>{
+    document.body.style.overflow = "auto";
+    scrollSmoothly(document.getElementById("main__content-services"), 2500);
+    setTimeout(() => {
+        document.getElementById("main__content-services").classList.add("transition-block");
+        document.getElementById("main__content-services").classList.add("stay-black");
+    }, 10);
+    setTimeout(() => {
+        document.getElementById("main__content-services").classList.remove("transition-block");
+        document.getElementById("main__content-services").classList.remove("stay-black");
+    }, 3500);
+    document.body.style.overflow = "hidden";
+};
+
+document.getElementById("nav__menu-item-services").onclick = () =>{
+    document.body.style.overflow = "auto";
+    scrollSmoothly(document.getElementById("main__content-services"), 2500);
+    setTimeout(() => {
+        document.getElementById("main__content-services").classList.add("transition-block");
+        document.getElementById("main__content-services").classList.add("stay-black");
+    }, 10);
+    setTimeout(() => {
+        document.getElementById("main__content-services").classList.remove("transition-block");
+        document.getElementById("main__content-services").classList.remove("stay-black");
+    }, 2500);
+    document.body.style.overflow = "hidden";
+};
+
+
+//Carrossel for about section
+let carrosselWrapper = document.getElementById("main__content-about-mobile-wrapper");
+let htmlForCarrossel = [
+    document.getElementById("content__about-mission-mobile").getHTML(),
+    document.getElementById("content__about-vission-mobile").getHTML(),
+]
+
+document.getElementById("main__content-about-mobile-wrapper").innerHTML = htmlForCarrossel[0];
+let indexCarrossel = 0;
+let nextPrevNavHtml = document.querySelectorAll(".content__about-navigation-b");
+
+nextPrevNavHtml.forEach((button)=>{
+    button.onclick = () =>{
+    carrosselWrapper.innerHTML = "";
+    
+    indexCarrossel === 0 ? carrosselWrapper.innerHTML = htmlForCarrossel[1] : carrosselWrapper.innerHTML = htmlForCarrossel[0];
+    indexCarrossel === 0 ? indexCarrossel = 1 : indexCarrossel = 0;
+}
+});
 
 
 
