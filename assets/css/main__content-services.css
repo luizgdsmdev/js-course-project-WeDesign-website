@@ -98,10 +98,28 @@
 @media screen and (max-width: 920px) {
     .content__about-text-wrapper{
         padding: 0;
+        justify-content: flex-end;
     }
     #main__content-about-mobile-wrapper{
         display: block;
         margin-bottom: 4rem;
+        margin-bottom: 4rem;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: flex-end;
+        align-items: baseline;
+    }
+
+    .main__content-about{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: space-evenly;
+        align-items: center;
+        row-gap: 0;
     }
 
     .hide_mobile{
